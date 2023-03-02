@@ -1,14 +1,15 @@
 import React from 'react'
 import '../../style.css'
 
-function cardWidget() {
+function ItemListConteiner({ greeting }) {
     return (
-        <div className="cardWidget">
-            <h1>holaaa</h1>
-            <FontAwesomeIcon icon="fa-thin fa-cart-shopping" />
-            <span>1</span>
-        </div>
+    <div>
+        <h1>PEDRO</h1>
+        <div>{ greeting }</div>
+    </div>        
     ) 
 }
 
-export default cardWidget
+export default ItemListConteiner
+
+

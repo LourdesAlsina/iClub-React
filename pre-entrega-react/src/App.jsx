@@ -2,8 +2,8 @@ import React from 'react'
 import './style.css'
 import './App.css'
 import './components/navBar.css'
-import cardWidget from './components/cardWidget/index'
-import itemListConteiner from './components/itemListConteiner/index'
+import CardWidget from './components/cardWidget/index'
+import ItemListConteiner from './components/itemListConteiner/index'
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <div>
         <Title value={"iClub"} />
         <NavBar />
-        <itemListConteiner greeting={"Bienvenido a iClub"} />
+        <ItemListConteiner greeting={"Bienvenido a iClub"} />
       </div>
     </React.Fragment>
   )
@@ -33,7 +33,7 @@ function NavBar() {
         <ul><li><a href="#">Servicios</a></li></ul>
         <ul><li><a href="#">Contacto</a></li></ul>
         <ul><li><input type="Buscar" /></li></ul>
-        <cardWidget />
+        <CardWidget />
         </nav> 
       </div>
     </React.Fragment>  
