@@ -6,7 +6,6 @@ import {faCartShopping} from '@fortawesome/free-solid-svg-icons'
 function CardWidget() {
     return (
         <div className="cardWidget">
-            <h1>holaaa</h1>
             <FontAwesomeIcon icon={faCartShopping} />
             <span>1</span>
         </div>
