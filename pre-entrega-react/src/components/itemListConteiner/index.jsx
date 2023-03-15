@@ -7,27 +7,40 @@ import { useEffect, useState } from 'react'
 import Products from "../../mocks/products"
 
 
-function ItemListConteiner({ greeting }) {
-    const [Products, setProducts] = useState([]);
+import { useState, useEffect } from 'react';
+import ItemList from './ItemList';
 
-    useEffect(() => {
-        const productsPromise = new Promise((resolve, reject) => setTimeout(() => resolve(Products), 2000));
-        products
-        .then((Response) =>setProducts(Response))
-        .catch((err)=> console.log(err));
-    }, [])
-    console.log({products});
+function ItemListConteiner({ categoryId, isCategoryRoute }) {
+  const [products, setProducts] = useState([]);
 
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        if (isCategoryRoute) {
+          const filteredProducts = data.filter(
+            (product) => product.categoryId === categoryId
+          );
+          setProducts(filteredProducts);
+        } else {
+          setProducts(data);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    return (
+    fetchProducts();
+  }, [categoryId, isCategoryRoute]);
+
+  return (
     <div>
-        <ul>
-            <ItemList products={products} />
-        </ul>
-    </div>        
-    ) 
+      <ul>
+        <ItemList products={products} />
+      </ul>
+    </div>
+  );
 }
 
-export default ItemListConteiner
-
-
+export default ItemListConteiner;
