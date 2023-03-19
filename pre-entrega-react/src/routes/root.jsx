@@ -1,9 +1,9 @@
 import React from 'react'
-import './style.css'
-import './App.css'
-import './components/navBar.css'
-import CardWidget from './components/cardWidget/index'
-import ItemListConteiner from './components/itemListConteiner/index'
+import '../style.css'
+import '../App.css'
+import '../components/navBar.css'
+import CardWidget from '../components/cardWidget/index'
+import ItemListConteiner from '../components/itemListConteiner/index'
 import { NavLink as RRNavLink, useParams } from 'react-router-dom'
 
 function Root() {

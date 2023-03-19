@@ -1,14 +1,9 @@
 import React from 'react'
 import '../../style.css'
-import Products from '../../mocks/products'
-import products from '../../mocks/products'
 import ItemList from '../itemList'
 import { useEffect, useState } from 'react' 
 import Products from "../../mocks/products"
 
-
-import { useState, useEffect } from 'react';
-import ItemList from './ItemList';
 
 function ItemListConteiner({ categoryId, isCategoryRoute }) {
   const [products, setProducts] = useState([]);
