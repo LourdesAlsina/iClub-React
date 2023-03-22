@@ -47,5 +47,293 @@
     background-color: #0062cc;
   }
   
-  
+  /* CATEGORIA PRODUCTOS */ 
 
+ 
+  .categorias {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .categoria {
+    background-color: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    width: calc(50% - 40px);
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  .categoria a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+/*----------------------------------------------*/
+/*     NAVBAR   */
+
+.navbar {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-logo a {
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-menu li {
+  margin-right: 20px;
+}
+
+.navbar-menu li:last-child {
+  margin-right: 0;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(175, 173, 173);
+  font-size: 1.2rem;
+  
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  color: #333;
+  font-size: 2rem;
+  margin-left: 20px;
+}
+
+
+ /*----------------------------------------------------------------*/
+/* PRODUCTOS ---------------------------------*/
+
+
+.contenedorProds {
+  display: flex;
+  flex-wrap: wrap; /* permite que los productos se ajusten a diferentes tamaños de pantalla*/
+  justify-content: center; /* alinea los productos al centro horizontalmente */
+  gap: 20px; /* espaciado entre los productos */
+  margin-top: 20px; /* espacio superior para separar los productos del contenido superior */
+}
+
+.productoX {
+  display: flex;
+  flex-direction: column; /* coloca la imagen encima del título */
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productoImagen img {
+  max-width: 100%; /* hace que la imagen no se desborde de su contenedor */
+}
+
+.product h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+
+
+
+/*----------------------------------------------------------------*/
+/*--------------------------CUADROS PRODUCTOS--------------------------------------*/
+
+.Item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  margin: 1rem;
+  width: 300px;
+  height: 400px;
+}
+
+.Item:hover {
+  transform: scale(1.05);
+}
+
+.Item h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: center;
+  color: #333333;
+}
+
+.Item img {
+  max-width: 100%;
+  height: 250px;
+  margin-top: 1rem;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+/*----------------------------------------------------------------*/
+/*--------------------------FONDO NAVBAR --------------------------------------*/
+.bodyReact{
+  background-image: url('../imagen/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*--------------------------Título --------------------------------------*/
+.titleIclub{
+  font-family: 'Bebas Neue', cursive;
+  margin-bottom: 10px;
+  font-size: 80px;   
+  background: linear-gradient(45deg, #747172, #b86082);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blink 2s infinite;
+
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*---------   DETALLE DEL PRODUCTO   -------------*/
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px auto;
+  max-width: 1000px;
+  background-color: #e6d5db;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.detail-image {
+  flex-basis: 40%;
+  margin-right: 20px;
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.detail-info {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.detail-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detail-description {
+  margin-bottom: 10px;
+}
+
+.detail-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detail-category {
+  margin-bottom: 10px;
+}
+
+.detail-stock {
+  margin-bottom: 10px;
+}
+
+.product-details .add-to-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #00bfa6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  
+}
+
+.product-details .add-to-cart:hover {
+  background-color: #009688;
+  cursor: pointer;
+}
+
+.product-details .add-to-cart i {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+/*---------   DETALLE DEL PRODUCTO   -------------*/

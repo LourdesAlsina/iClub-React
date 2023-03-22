@@ -2,12 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Root from './routes/root'
 import './index.css'
-import ItemDetailConteiner from './components/itemDetailConteiner/itemDetailConteiner'
-import ItemRoot from './routes/item'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import CategoryP from './components/Categories/categoryP'
+import ItemListContainer from './components/itemListContainer/itemListContainer';
+import ItemDetail from './components/itemDetail/itemDetail';
 
 const router = createBrowserRouter([
   {
@@ -15,22 +13,23 @@ const router = createBrowserRouter([
     element: <Root />,
   },
   {
-    path: "/category/:id",
-    element: <Root />,
+    path: "/categoryP",
+    element: <CategoryP />,
   },
   {
-    path: "/item/:id",
-    element: <ItemRoot />,
-  },
-  {
-    path: "/cart",
-    element: <div>Carrito</div>,
+    path: "/categoryP/:id",
+    element: <ItemListContainer />,
   },
   {
     path: "/checkout",
     element: <div>Hello world!</div>,
   },
+  {
+    path: "/itemDetail/:id",
+    element: <ItemDetail />,
+  },
 ]);
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
