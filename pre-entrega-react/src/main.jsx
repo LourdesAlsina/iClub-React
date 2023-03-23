@@ -6,6 +6,7 @@ import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import CategoryP from './components/Categories/categoryP'
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import ItemDetail from './components/itemDetail/itemDetail';
+import Servicios from './components/servicios/servicios';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/itemDetail/:id",
     element: <ItemDetail />,
+  },
+  {
+    path: "/servicios",
+    element: <Servicios />,
   },
 ]);
 

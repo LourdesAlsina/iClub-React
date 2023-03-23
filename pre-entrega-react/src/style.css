@@ -337,3 +337,29 @@
 }
 
 /*---------   DETALLE DEL PRODUCTO   -------------*/
+/*---------------SERVICIOS --------------------*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+ 
+}
+.image-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  width: 60%;
+  margin-right: 30px;
+}
+
+.image-container img {
+  width: 30%;
+  align-self: flex-start;
+}
