@@ -8,6 +8,21 @@ import ItemListContainer from './components/itemListContainer/itemListContainer'
 import ItemDetail from './components/itemDetail/itemDetail';
 import Servicios from './components/servicios/servicios';
 
+// Firebase
+import { initializeApp } from "firebase/app";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB53q78OzXrHdUUqBUluOiLztRrvdF_KBg",
+  authDomain: "iclub-18b68.firebaseapp.com",
+  projectId: "iclub-18b68",
+  storageBucket: "iclub-18b68.appspot.com",
+  messagingSenderId: "528369667427",
+  appId: "1:528369667427:web:caa5369df21f81626e1756"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
 const router = createBrowserRouter([
   {
     path: "/",

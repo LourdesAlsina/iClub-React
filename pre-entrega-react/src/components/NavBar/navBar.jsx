@@ -16,9 +16,6 @@ function NavBar() {
                 <RRNavLink to="/servicios" className='navLink' activeClassName='active'>
                 Servicios
                 </RRNavLink>
-                <RRNavLink to="/nosotros" className='navLink' activeClassName='active'>
-                Nosotros
-                </RRNavLink>
                 <RRNavLink to="/contactos" className='navLink' activeClassName='active'>
                 Contactos
                 </RRNavLink>

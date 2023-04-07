@@ -26,6 +26,7 @@ export default [
         price: 800,
         category: "usados",
         stock: 5,
+        quantity: 1,
         Image: Product1 
     },
     {
@@ -36,6 +37,7 @@ export default [
         price: 1000 ,
         category: "phones",
         stock: 10,
+        quantity: 1,
         Image: Product2
     },
     {
@@ -46,6 +48,7 @@ export default [
         price: 1020 ,
         category: "phones",
         stock: 4,
+        quantity: 1,
         Image: Product3
     },
     {
@@ -56,26 +59,29 @@ export default [
         price: 1200 ,
         category: "usados",
         stock: 2,
+        quantity: 1,
         Image: Product4
     },
     {
         id: 5,
         product: "iphone",
         title: "Iphone 14 mini",
-        description: "Iphone 12 pro disponible en color gris",
+        description: "Iphone 14 pro disponible en color gris",
         price: 1250,
         category: "phones",
         stock: 9,
+        quantity: 1,
         Image: Product5
     },
     {
         id: 6,
         product: "iphone",
         title: "Iphone 14 ",
-        description: "Iphone 12 pro disponible en color violeta",
+        description: "Iphone 14 pro disponible en color violeta",
         price: 1400,
         category: "phones",
         stock: 7,
+        quantity: 1,
         Image: Product6
     },
     {
@@ -86,6 +92,7 @@ export default [
         price: 1500,
         category: "phones",
         stock: 4,
+        quantity: 1,
         Image: Product7
     },
     {
@@ -96,6 +103,7 @@ export default [
         price: 300,
         category: "fundas",
         stock: 9,
+        quantity: 1,
         Image: Product8
     },
     {
@@ -106,6 +114,7 @@ export default [
         price: 300,
         category: "fundas",
         stock: 7,
+        quantity: 1,
         Image: Product9
     },
     {
@@ -116,6 +125,7 @@ export default [
         price: 300,
         category: "fundas",
         stock: 4,
+        quantity: 1,
         Image: Product10
     },
     {
@@ -126,6 +136,7 @@ export default [
         price: 300,
         category: "fundas",
         stock: 7,
+        quantity: 1,
         Image: Product11
     },
     {
@@ -136,6 +147,7 @@ export default [
         price: 1000,
         category: "accesorios",
         stock: 4,
+        quantity: 1,
         Image: Product12
     },
     {
@@ -146,6 +158,7 @@ export default [
         price: 1250,
         category: "accesorios",
         stock: 9,
+        quantity: 1,
         Image: Product13
     },
     {
@@ -156,6 +169,7 @@ export default [
         price: 70,
         category: "accesorios",
         stock: 7,
+        quantity: 1,
         Image: Product14
     },
     {
@@ -166,6 +180,7 @@ export default [
         price: 2000,
         category: "accesorios",
         stock: 4,
+        quantity: 1,
         Image: Product15
     },
 ];
