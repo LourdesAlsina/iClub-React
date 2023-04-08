@@ -7,7 +7,7 @@ function CardWidget() {
     return (
         <div className="cardWidget">
             <FontAwesomeIcon icon={faCartShopping} />
-            <span>1</span>
+            <span>0</span>
         </div>
     ) 
 }

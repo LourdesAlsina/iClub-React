@@ -3,35 +3,14 @@ import { NavLink as RRNavLink, useParams } from 'react-router-dom'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react';
+import { Context } from '../../context/context';
+import {faPlus} from '@fortawesome/free-solid-svg-icons'
+import {faMinus} from '@fortawesome/free-solid-svg-icons'
 
-
-function NavBar1({
-	productsCart,
-	setProductsCart,
-	total,
-	countProducts,
-	setCountProducts,
-	setTotal,
-}) {
- 
-    const [active, setActive] = useState(false)
-
-    const onDeleteProduct = product => {
-		const results = productsCart.filter(
-			item => item.id !== product.id
-		);
-
-		setTotal(total - product.price * product.quantity);
-		setCountProducts(countProducts - product.quantity);
-		setProductsCart(results);
-	};
-
-	const onCleanCart = () => {
-		setProductsCart([]);
-		setTotal(0);
-		setCountProducts(0);
-	};
-
+function NavBar1() {
+    const appContext = useContext(Context)
+    console.log(appContext.productsCart)      
     return (
         <div>
             <nav class="navbar">
@@ -68,25 +47,25 @@ function NavBar1({
                         <div className='container-icon'>
                             <div
                             className='container-cart-icon'
-                            onClick={() => setActive(!active)}
+                            onClick={() => appContext.setActive(!appContext.active)}
                             >
                                 <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
                             </div>
                             <div className='count-products'>
-						        <span id='contador-productos'>0</span>
+						        <span id='contador-productos'>{appContext.countProducts}</span>
 					        </div>
                         </div>
                         <div
 					    className={`container-cart-products ${
-						active ? '' : 'hidden-cart'
+                            appContext.active ? '' : 'hidden-cart'
 					    }`}
 				        >
-                         {productsCart !== undefined ? (    
+                         {appContext.productsCart !== undefined ? (    
                             <>
-                                {productsCart.length  ? (
+                                {appContext.productsCart.length  ? (
                                             <>
                                                 <div className='row-product'>
-                                                    {productsCart.map(product => (
+                                                    {appContext.productsCart.map(product => (
                                                         <div className='cart-product' key={product.id}>
                                                             <div className='info-cart-product'>
                                                                 <span className='cantidad-producto-carrito'>
@@ -99,17 +78,19 @@ function NavBar1({
                                                                     ${product.price}
                                                                 </span>
                                                             </div>
-                                                            <FontAwesomeIcon icon={faTrash} />
+                                                            <FontAwesomeIcon icon={faPlus} onClick={() => appContext.sumar(product)}/>
+                                                            <FontAwesomeIcon icon={faMinus} onClick={() => appContext.restar(product)}/>
+                                                            <FontAwesomeIcon icon={faTrash} onClick={() => appContext.onDeleteProduct(product)} />
                                                         </div>
                                                     ))}
                                                 </div>
 
                                                 <div className='cart-total'>
                                                     <h3>Total:</h3>
-                                                    <span className='total-pagar'>${total}</span>
+                                                    <span className='total-pagar'>${appContext.total}</span>
                                                 </div>
 
-                                                <button className='btn-clear-all' onClick={onCleanCart}>
+                                                <button className='btn-clear-all' onClick={appContext.onCleanCart}>
                                                     Vaciar Carrito
                                                 </button>
                                             </>

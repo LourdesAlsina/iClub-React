@@ -7,7 +7,7 @@ import CategoryP from './components/Categories/categoryP'
 import ItemListContainer from './components/itemListContainer/itemListContainer';
 import ItemDetail from './components/itemDetail/itemDetail';
 import Servicios from './components/servicios/servicios';
-
+import { CustomProvider } from './context/context';
 // Firebase
 import { initializeApp } from "firebase/app";
 
@@ -52,8 +52,12 @@ const router = createBrowserRouter([
 
 
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CustomProvider>
+      <RouterProvider router={router} />
+    </CustomProvider>
   </React.StrictMode>,
 )

@@ -3,12 +3,15 @@ import { NavLink as RRNavLink, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Products from "../../mocks/products"
 import NavBar1 from '../NavBar/navBar1';
+import { useContext } from 'react';
+import { Context } from '../../context/context';
 
-
-function ItemDetail() {  
+function ItemDetail() {
+    const appContext = useContext(Context)  
     const params = useParams()
     const idProduct = params.id 
     const [products, setProducts] = useState([]);
+    console.log(appContext)
 
   useEffect(() => {
     const productsPromise = new Promise((resolve, reject) => 
@@ -28,6 +31,7 @@ function ItemDetail() {
   }, []);
   
     console.log(products)
+    
     return (
         <div>
             <NavBar1 />                
@@ -42,7 +46,7 @@ function ItemDetail() {
                         <div class="detail-price">Precio: {new Intl.NumberFormat('es-AR', {style: 'currency', currency: 'ARS'}).format(product.price)}</div>
                         <div class="detail-category">Categoría: {product.category}</div>
                         <div class="detail-stock">Productos en stock: {product.stock}</div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" onClick={() => appContext.onAddProduct(product)}>
                             <i class="fas fa-shopping-cart"></i> Agregar al carrito
                         </button>
                     </div>

@@ -1,7 +1,6 @@
 import '../../style.css'
 import { NavLink as RRNavLink, useParams } from 'react-router-dom'
 
-
 function Item({product}) {    
     return (
     <div className='Item'>
