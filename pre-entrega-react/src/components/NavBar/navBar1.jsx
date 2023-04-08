@@ -93,6 +93,11 @@ function NavBar1() {
                                                 <button className='btn-clear-all' onClick={appContext.onCleanCart}>
                                                     Vaciar Carrito
                                                 </button>
+                                               
+                                                <RRNavLink exact to="/checkout" className='navLink' activeClassName='active'>
+                                                <button id='checkout'> Ver compra </button>
+                                                </RRNavLink>
+                                                
                                             </>
                                         ) : (
                                             <p className='cart-empty'>El carrito está vacío</p>

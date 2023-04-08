@@ -61,13 +61,7 @@ const onAddProduct = product => {
 		setCountProducts(countProducts - 1);
 		return setProductsCart([...products]);
 	} else {
-		const results = productsCart.filter(
-			item => item.id !== product.id
-		);
-
-		setTotal(total - product.price * product.quantity);
-		setCountProducts(countProducts - product.quantity);
-		setProductsCart(results);
+		
 	}
 	};
 

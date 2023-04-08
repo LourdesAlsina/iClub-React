@@ -8,6 +8,9 @@ import ItemListContainer from './components/itemListContainer/itemListContainer'
 import ItemDetail from './components/itemDetail/itemDetail';
 import Servicios from './components/servicios/servicios';
 import { CustomProvider } from './context/context';
+import Checkout from './components/checkout/checkout';
+import Register from './components/register/register';
+import Contacto from './components/contacto/contacto';
 // Firebase
 import { initializeApp } from "firebase/app";
 
@@ -38,7 +41,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/checkout",
-    element: <div>Hello world!</div>,
+    element: <Checkout />,
   },
   {
     path: "/itemDetail/:id",
@@ -47,6 +50,14 @@ const router = createBrowserRouter([
   {
     path: "/servicios",
     element: <Servicios />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/contacto",
+    element: <Contacto />,
   },
 ]);
 
