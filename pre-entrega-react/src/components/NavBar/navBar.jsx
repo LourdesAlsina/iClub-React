@@ -20,7 +20,7 @@ function NavBar() {
                 Contactos
                 </RRNavLink>
                 <input type='text' placeholder='Buscar' className='navSearch' />
-                <CardWidget />
+                
             </nav>
        </div>       
     );

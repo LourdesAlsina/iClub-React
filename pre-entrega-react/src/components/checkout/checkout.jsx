@@ -13,7 +13,15 @@ import {faTrash} from '@fortawesome/free-solid-svg-icons'
 
 
 function Checkout() {
-    const appContext = useContext(Context)  
+    const appContext = useContext(Context) 
+
+    function FinalizarCompra() {
+        const order = {
+            buyer: { name: "Agustin", phone: "35785421", email:"agus@gmail.com"}, 
+            item: [{ title: "Iphone 12 pro max", price: 800}],
+            total: 800
+        }
+    }
 
     console.log(appContext.productsCart[0])
         return (  
@@ -49,7 +57,7 @@ function Checkout() {
                     <button  className='btn-clear-all' onClick={appContext.onCleanCart}>
                             Vaciar Carrito
                     </button>
-                    <button className='btn-clear-all'>
+                    <button className='btn-clear-all' onClick={FinalizarCompra}>
                             Finalizar compra
                     </button>
                 </div>
