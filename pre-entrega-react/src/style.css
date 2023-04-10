@@ -170,6 +170,16 @@
 }
 
 /* -------------------- CARRITO DE COMPRAS -------------------*/
+h1{
+  margin-top: 60px;
+  font-size: 36px; /* Tamaño de fuente en pixeles */
+  color: #000; /* Color del texto */
+  font-family: Arial, sans-serif; /* Fuente del texto */
+  text-align: center; /* Alineación del texto (center, left, right) */
+  margin-bottom: 10px; /* Margen inferior del h1 en pixeles */
+  /* Otros estilos adicionales que desees aplicar */
+}
+
 
 .icon-cart {
 	width: 40px;
@@ -613,8 +623,8 @@ a {
 }
 
 .total-card {
-  border: 2px solid  #f3f3f1;
-  background-color:  #f3f3f1;
+  border: 2px solid  #8a8a73;
+  background-color:  #cecebb;
   border-radius: 15px;
 }
 .total-card > button{

@@ -4,14 +4,15 @@ import Item from '../item/item';
 
 
 
-function ItemList({params, products}) {    
-    const category = params
-    const productsFiltered = products.filter(product => product.category == category)
 
+function ItemList({params, products}) {    
+    /*const category = params
+    const productsFiltered = products.filter(product => product.category == category)*/
+    console.log(products)
     return (
     <div>        
         <ul>
-            {productsFiltered.map((product, index) => (
+            {products.map((product, index) => (
                 <Item product={product}/>
             ))}            
         </ul>                

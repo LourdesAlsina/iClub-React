@@ -5,17 +5,36 @@ import Products from "../../mocks/products"
 import NavBar1 from '../NavBar/navBar1';
 import { useContext } from 'react';
 import { Context } from '../../context/context';
+import {collection,  getDocs,  getFirestore, query, where} from "firebase/firestore"
 
 function ItemDetail() {
     const appContext = useContext(Context)  
     const params = useParams()
     const idProduct = params.id 
     const [products, setProducts] = useState([]);
-    console.log(appContext)
+ 
+    useEffect(() => {
+        const db = getFirestore()
+        const itemCollection = collection(db, "items")
+        const queryResult = query(itemCollection, 
+            where("id", "==", Number(idProduct))
+            );
+        getDocs(queryResult)
+        .then((snapshot) => {
+            const docs = snapshot.docs;
+            setProducts(
+              docs.map((doc) => {
+                return { id: doc.id, ...doc.data() };
+              })
+            )
+        }).catch((error) => concole.log({error}))
+        
+    }, [idProduct])
+    console.log(products)
 
-  useEffect(() => {
+  /*useEffect(() => {
     const productsPromise = new Promise((resolve, reject) => 
-    setTimeout(() => resolve(Products), 1000) 
+    setTimeout(() => resolve(Products), 100) 
     );
     productsPromise
     .then((response) => {
@@ -30,7 +49,7 @@ function ItemDetail() {
     .catch((err) => console.log(err));
   }, []);
   
-    console.log(products)
+    console.log(products)*/
     
     return (
         <div>
@@ -38,7 +57,7 @@ function ItemDetail() {
             {products.map((product, index) => (                              
                <div class="detail-container">
                     <div class="detail-image">
-                        <img src={product.Image} />
+                        <img src={product.image} />
                     </div>
                     <div class="detail-info">
                         <h1 class="detail-title">{product.title}</h1>

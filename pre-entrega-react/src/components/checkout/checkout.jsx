@@ -12,6 +12,7 @@ import {faTrash} from '@fortawesome/free-solid-svg-icons'
 
 
 
+
 function Checkout() {
     const appContext = useContext(Context) 
 
@@ -21,6 +22,8 @@ function Checkout() {
             item: [{ title: "Iphone 12 pro max", price: 800}],
             total: 800
         }
+
+       
     }
 
     console.log(appContext.productsCart[0])
@@ -31,7 +34,7 @@ function Checkout() {
             <ul className='PCartContainer'>                              
                 {appContext.productsCart.map((product, index) => (             
                 <div className='Item'>                    
-                    <img src={product.Image}/>   
+                    <img src={product.image}/>   
                     <div className='cart-product-checkout' key={product.id}>
                             <p className='titulo-producto-carrito-checkout'>
                                 {product.title}
