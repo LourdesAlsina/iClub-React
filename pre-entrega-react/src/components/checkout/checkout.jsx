@@ -9,24 +9,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlus} from '@fortawesome/free-solid-svg-icons'
 import {faMinus} from '@fortawesome/free-solid-svg-icons'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
+import {collection, getFirestore, addDoc, doc, updateDoc} from "firebase/firestore"
+import products from '../../mocks/products';
 
 
 
 
 function Checkout() {
-    const appContext = useContext(Context) 
+    const appContext = useContext(Context)
+    const db = getFirestore() 
+
+    function updateOrder(productId, finalStock) {
+        const itemRef = doc(db, "items", productId)
+        updateDoc(itemRef, {stock: finalStock})
+    }
 
     function FinalizarCompra() {
         const order = {
             buyer: { name: "Agustin", phone: "35785421", email:"agus@gmail.com"}, 
-            item: [{ title: "Iphone 12 pro max", price: 800}],
-            total: 800
+            items: appContext.productsCart,
+            total: appContext.total
         }
 
        
+       const collectionRef = collection(db, "orders")
+       addDoc(collectionRef, order)
+        .then(() => {
+            appContext.productsCart.map((product) => {
+                const finalStock = product.stock - product.quantity
+                updateOrder(product.id, finalStock)    
+        })
+        })
+        .catch((error) => console.log({ error}))
     }
 
-    console.log(appContext.productsCart[0])
+    console.log(appContext.productsCart)
         return (  
             <div> 
             <NavBar1 />
